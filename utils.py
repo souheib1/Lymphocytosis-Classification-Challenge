@@ -42,7 +42,6 @@ def preprocess_metadata(path_data='../dataset/'):
     train_meta_binary["LYMPH_COUNT"] = train_set["LYMPH_COUNT"] > thresh_lymph_count
     train_meta_binary["AGE"] = train_set["AGE"] > thresh_age
     train_meta_binary["LABEL"] = train_set["LABEL"]
-
     train_set["SUBGROUP"] = train_meta_binary["LYMPH_COUNT"] + 2*train_meta_binary["AGE"] + 4*train_meta_binary["LABEL"]
 
     return train_set, test_set
