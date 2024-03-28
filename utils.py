@@ -32,6 +32,19 @@ def preprocess_metadata(path_data='../dataset/'):
     df.drop('DOB', axis=1, inplace=True)
     train_set = df[df['LABEL'].isin([0, 1])]
     test_set = df[df['LABEL'] == -1]
+
+    # Add a column for the train set to indicate the subgroup used for stratification
+    thresh_lymph_count = train_set["LYMPH_COUNT"].median()
+    thresh_age = train_set["AGE"].median()
+
+    # Store the 3 binary variables
+    train_meta_binary = pd.DataFrame(index=train_set.index)
+    train_meta_binary["LYMPH_COUNT"] = train_set["LYMPH_COUNT"] > thresh_lymph_count
+    train_meta_binary["AGE"] = train_set["AGE"] > thresh_age
+    train_meta_binary["LABEL"] = train_set["LABEL"]
+
+    train_set["SUBGROUP"] = train_meta_binary["LYMPH_COUNT"] + 2*train_meta_binary["AGE"] + 4*train_meta_binary["LABEL"]
+
     return train_set, test_set
 
 
