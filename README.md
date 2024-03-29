@@ -3,7 +3,7 @@ Classification of lymphocytosis from white blood cells.
 
 **Team name:** SB-MC
 ## Project Description
-This project served as the culmination of the Deep Learning for Medical Imaging course. The primary goal was to leverage machine learning techniques to predict whether a patient’s lymphocytes are reactive or tumoral. The challenge involved a provided dataset containing patient information, blood smear images, and clinical attributes. This repository contains our solution to the method which yielded to a Balanced Accuracy Score equal to 0.823.
+This project was realized in the Deep Learning for Medical Imaging course. The primary goal was to leverage machine learning techniques to predict whether a patient’s lymphocytes are reactive or tumoral. The challenge involved a provided dataset containing patient information, blood smear images, and clinical attributes. This repository contains our solution to the method which yielded a Balanced Accuracy Score equal to 0.823.
 
 ## How to use our code 
 
